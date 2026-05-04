@@ -224,4 +224,246 @@ footer {
 </footer>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athaaura Events</title>
+
+<style>
+:root {
+    --charcoal: #2b2b2b;
+    --champagne: #d8c3a5;
+    --ivory: #f8f5f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--ivory);
+}
+
+/* NAV */
+nav {
+    background: var(--charcoal);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--champagne);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 55px;
+    animation: fade 2s ease;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    margin-top: 10px;
+    animation: fade 2.5s ease;
+}
+
+@keyframes fade {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 10%;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* SERVICES */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid var(--champagne);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact {
+    background: var(--charcoal);
+    color: white;
+    text-align: center;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background: var(--champagne);
+    border: none;
+    cursor: pointer;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+<h1>ATHAAURA EVENTS</h1>
+<p>Events that never lose their charm</p>
+<p>Transform your wedding into "AthaAura" dream</p>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+<h2 class="title">Our Services</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Wedding Planner</h3>
+<p>Themes, Entertainment, Personalisation, Catering</p>
+</div>
+
+<div class="card">
+<h3>Corporate Events</h3>
+<p>Launches, Conferences, Exhibitions, Dealer Meets</p>
+</div>
+
+<div class="card">
+<h3>Social Events</h3>
+<p>Birthdays, Engagements, Anniversaries, Theme Parties</p>
+</div>
+
+<div class="card">
+<h3>Other Events</h3>
+<p>Concerts, Fashion Shows, Festivals, Inaugurations</p>
+</div>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2 class="title">Gallery</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1529634894053-4d0e1c1f5f08">
+<img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c8b">
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2 class="title">Contact Us</h2>
+
+<p>📞 7987217601</p>
+<p>📧 athaauraevents1@gmail.com</p>
+<p>📍 Dewas</p>
+
+<br>
+
+<form>
+<input type="text" placeholder="Your Name"><br>
+<input type="email" placeholder="Your Email"><br>
+<textarea rows="4" placeholder="Your Message"></textarea><br>
+<button type="submit">Send</button>
+</form>
+
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/917987217601" target="_blank">
+💬 Chat
+</a>
+
+</body>
 </html>
