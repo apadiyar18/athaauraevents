@@ -3,101 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atha Aura Events</title>
+<title>Athaaura Events</title>
 
 <style>
-body {
+/* ===== COLORS ===== */
+:root {
+    --charcoal: #2b2b2b;
+    --champagne: #d8c3a5;
+    --ivory: #f8f5f0;
+}
+
+/* ===== GLOBAL ===== */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
-    background: url('https://www.transparenttextures.com/patterns/arabesque.png');
-    background-color: #f5f5f5;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 40px 20px;
+body {
+    background: var(--ivory);
+    color: var(--charcoal);
+    scroll-behavior: smooth;
 }
 
-.header h1 {
-    font-size: 40px;
-    letter-spacing: 2px;
+/* ===== NAVBAR ===== */
+nav {
+    background: var(--charcoal);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.header p {
-    font-size: 20px;
-    margin: 5px 0;
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
 }
 
-/* Section */
-.section {
+nav a {
+    color: var(--champagne);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 40px;
-    flex-wrap: wrap;
-}
-
-/* Image */
-.section img {
-    width: 400px;
-    border-radius: 10px;
-}
-
-/* Card */
-.card {
-    background: #dcdcdc;
-    padding: 30px;
-    max-width: 400px;
-    border-radius: 10px;
     text-align: center;
+    color: var(--ivory);
+    flex-direction: column;
 }
 
-.card h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
+.hero h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    animation: fadeDown 2s ease;
 }
 
-.card p {
+.hero p {
     font-size: 18px;
-    line-height: 1.6;
+    margin-top: 10px;
+    animation: fadeUp 2s ease;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .section {
-        flex-direction: column;
-    }
+/* ===== ANIMATIONS ===== */
+@keyframes fadeDown {
+    from {opacity:0; transform: translateY(-40px);}
+    to {opacity:1; transform: translateY(0);}
+}
 
-    .section img {
-        width: 90%;
-    }
+@keyframes fadeUp {
+    from {opacity:0; transform: translateY(40px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 60px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--charcoal);
+}
+
+/* ===== ABOUT ===== */
+.about {
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* ===== SERVICES ===== */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid var(--champagne);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    background: var(--charcoal);
+    color: var(--ivory);
+    text-align: center;
+    padding: 50px;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <h1>ATHA AURA EVENTS</h1>
+<!-- NAV -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <h1>ATHAAURA EVENTS</h1>
     <p>welcoming you</p>
     <p>Events that never lose their charm</p>
     <p>Transform your wedding into "AthaAura" dream</p>
 </div>
 
-<div class="section">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Wedding Event">
-
-    <div class="card">
-        <h2>Wedding Planning</h2>
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about">
         <p>
-            Marriage is a significant event in life that needs to be marked with grandeur.
-            And we are all about grandeur. We infuse the celebrations with charm and
-            emotions that perfectly portray the start of a new age.
+        Welcome to Athaaura Events, where imagination meets flawless execution.
+        We create extraordinary experiences filled with elegance, emotion, and perfection.
+        From weddings to corporate events, we turn your vision into reality.
         </p>
     </div>
-</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Wedding Planner</h3>
+            <p>Themes, Entertainment, Personalisation, Catering</p>
+        </div>
+
+        <div class="card">
+            <h3>Corporate Solutions</h3>
+            <p>Product Launch, Conferences, Annual Bashes, Exhibitions, Dealer Meets</p>
+        </div>
+
+        <div class="card">
+            <h3>Social & Personal</h3>
+            <p>Engagements, Birthdays, Theme Events, Anniversaries, Gala Events</p>
+        </div>
+
+        <div class="card">
+            <h3>Other Events</h3>
+            <p>Fashion Shows, Concerts, Festivals, Public Events, Inaugurations</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 7987217601</p>
+    <p>📧 athaauraevents1@gmail.com</p>
+    <p>📍 Dewas</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Athaaura Events | All Rights Reserved
+</footer>
 
 </body>
 </html>
